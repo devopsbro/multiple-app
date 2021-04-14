@@ -7,6 +7,6 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stage 1 builder
 COPY . /usr/share/nginx/html
 RUN ls -la /usr/share/nginx/html #To check nginx html folder is copied successfully or not
-
+RUN chmod 0755 -R /usr/share/nginx/html
 EXPOSE 81
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
